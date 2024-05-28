@@ -9,9 +9,17 @@ use crate::features::bloc_gen::bloc_file_gen;
 
 #[path = "../features/mod.rs"]
 mod features;
+#[path = "../lib/mod.rs"]
+mod lib;
 
-fn main() {
-    bloc_file_gen::init_bloc_gen();
+#[tokio::main]
+async fn main() {
+    tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::INFO)
+        .with_target(false)
+        .init();
+
+    bloc_file_gen::init_bloc_gen().await;
 
     println!("Hello, world!");
 }

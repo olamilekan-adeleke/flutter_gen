@@ -8,3 +8,16 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.86"
+
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = [
+    "fmt",
+    "std",
+    "env-filter",
+    "registry",
+    'json',
+    'tracing-log',
+] }
+
+tokio = { version = "1", features = ["full"] }
+
