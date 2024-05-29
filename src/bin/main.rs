@@ -19,7 +19,7 @@ async fn main() {
         .with_target(false)
         .init();
 
-    bloc_file_gen::init_bloc_gen().await;
+    let _ = bloc_file_gen::init_bloc_gen().await;
 
     println!("Hello, world!");
 }
